@@ -13,7 +13,7 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    df = pd.read_excel("Ciudades.xlsx")
+    df = pd.read_excel("JoseSalvadorGonzalezBlanco_GeneticAlgorithm\Code\Ciudades.xlsx")
     cities = df['Ciudad'].to_list()
     xs = df['x'].to_list()
     ys = df['y'].to_list()

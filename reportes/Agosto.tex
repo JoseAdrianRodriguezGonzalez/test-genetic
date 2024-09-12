@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{natbib}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{Agosto}
+\author{José Adrián Rodríguez González}
+\date{Agosto 2024}
+\begin{document}
+\maketitle
+\section{Introudcción}
+A manera de introducir el proyecto, se realizó una investigación exhaustiva acerca de los conjuntos difusos, a su vez de sus ocmponentes básica que lo conforman.
+\section{¿Qué es un conjunto difuso?}
+Acorde a \citep{ZADEH1965338} un conjunto difuso se define como un conjunto $X$ universal, de tal manera que $\tilde{A}$ definidio por su función miembro 
+Siendo cada subconjutno difuso como:
+
+\[\mu_{\tilde{A}}: X\ \rightarrow[0,1]\]
+De tal forma que un subconjunto difuso se describe como: 
+
+\[
+\tilde{A}=\{(x,\mu_{\tilde{A}})| x\in X\}
+\]
+
+\[
+\mu_A(x) =
+\begin{cases}
+  1 & x=1,\text{Está totalmente en A},  \\
+  0 & x=0, \text{No está en A}, \\
+  0<\mu_A(x)<1 & \text{Se encuentra parcialmente en A}
+\end{cases}
+\]
+De está forma se diferencia de un conjunto comun que se define como.
+\[
+C_A(x) =
+\begin{cases}
+  1 & x \in A,  \\
+  0 & x \notin  A
+\end{cases}
+\]
+De esta manera se puede definir el dominio de las funciones de membresía sin embargo, un conjunto difuso es la suma de sus funciones de membresía entre su valor evaluado, siendo que
+$$A = \mu(x_1) /x_1+\mu(x_2) /x_2+\mu(x_3) /x_3+\mu(x_4) /x_4+\mu(x_5) /x_5+\dots +\mu(x_n) /x_n$$
+de manera más simplificada
+$$A= \Sigma^n_{i=1} \mu(x_i) /x_i$$
+\section{Entendiendo el uso}
+Teniendo en cuenta el preambulo de los subconjuntos difusos una de sus granmdes utilidades es al crear sistemas basados en reglas.  Teniendo como analogía la definición de estaturas. Cuando se dice que alguien es alto o bajo, humanameente se tiene un rango de tolerancia para definir que es alto o bajo. Sin embargo una computadora no puede ccomprender esas abstracciones no humanas a menos de que se utilice otro tipo de lógica. La lógica difusa viene en ayuda al poder edefinir un rango de tolerancia para definir que es alto o bajo.
+La función de membresía nos ayuda a definir nuestros sub conjuntos difusos de tal forma que: 
+\(\mu_{\tilde{A}} \in \mathbb{R}\) siendo así una función de membresía de nuestro subconjunto difuso.
+\section{ideas básicas}
+Los principios básicos de los conjuntos difusos son:
+\subsection{soporte}
+El soporte de un conjunto difuso $A$ en $X$  está denotado por  $supp(A)$es el conjunto de puntos en $X$ de los cuales $\mu_A(X)$ es positivo
+$$supp(A)=\{x\in X | \mu_A (x)>0\}$$
+\subsection{Altura}
+La altura de un conjunto difuso está dentoado por 
+$$hgt(A)=sup_{x\in X} \mu_A(x)$$
+\subsection{Normal}
+Cuando un conjunto difuso se dice que es normal es uncaod la altura es 1, si no es normal etnonces se le dice subnormal.
+\subsection{Vacío}
+Se denota con $\emptyset \Longleftrightarrow \mu_a(x)=0 \text{  }\forall x \in X$   
+\section{Operaciones basicas}
+Al igual que los conjuntos ordinarios existen operaciones para los conjuntos difusos.
+\subsection{Igualdad}
+Los conjuntos difusos $A$ y $B$ n $X$ son iguales cuando $$A=B \Longleftrightarrow  \mu_A(x)=\mu_B(x)\text{  } \forall x\in X$$ 
+\subsection{Contención}
+El conjunto difuso de $A$ está contenido en $B$ cuando
+$$A \subseteq B \Longleftrightarrow \mu_A(x) \leq \mu_B(x) \text{  }\forall x\in X$$
+\subsection{Complemento}
+El complemento de un conjunto difuso de $A$ en $X$se denota como $\bar{A}$
+$$\mu_{\bar{A}}(x)=1-\mu_A(x)\text{  } \forall x \in X$$
+\subsection{Intersección}
+La intersección de dos conjuntos difusos está dado por 
+$$\mu_{A\cap B}(x)= min\{\mu_A(x),\mu_B(x)\} \text{  }\forall x \in X$$
+\subsection{Unión}
+La unión de dos conjuntos difusos está dada por:
+$$\mu_{A\cup B}=max\{\mu_A(x),\mu_B(x)\} \text{  }\forall x \in X$$
+Notese que un conjunto difuso siendo  pertenciente de $X$, se le puede definir como:
+$$A=\int_X \mu_A(x)/x$$
+Siendo la generalización de la suma de funciones de membresía.
+Por lo tanto, todas las operaciones anteriores pueden ser intecambiadas por esta notación
+
+En logica difusa, el minimo y máximo se definen como:
+
+$$min(a,b)= a\land b$$
+$$max(a,b)=a \lor b$$
+\section{Leyes de los conjuntos difusos}
+\subsection{Ley conmutativa}
+$$A \cup B =B \cup A , A \cap B = B \cap A$$
+\subsection{Leyes asociativas}
+$$A \cup (B \cup C )= (A \cup B) \cup C , A \cap (B \cap C )= (A \cap B) \cap C $$
+\subsection{Leyes de distribución}
+$$A \cup (B \cap C)= (A \cup B) \cap (A \cup C),A \cap (B \cup C)= (A \cap B) \cup (A \cap C)$$
+\subsection{Ley De Morgan}
+$$\overline{(A \cap B)}= \bar{A} \cap \bar{B}, \overline{(A \cup B)}= \bar{A} \cup \bar{B} $$
+\subsection{Involución}
+$$\bar{\bar{A}}=A$$
+Como se puede notar,casi todas las leyes de los conjuntos ordinarios se pueden adapatar a la notación de lógica difusa.
+Además se pueden adicionar otras operaciones algebraicas
+\section{Operaciones algebraicas}
+\subsection{Producto algebráica}
+$$AB \Leftrightarrow \mu_{AB}(x)= \mu_A(x)\mu_b{x}$$
+\subsection{Suma algebráica}
+$$A+B \Leftrightarrow \mu_{A+B}(x)= \mu_A (x)+\mu_B(x)-\mu_A(x)\mu_b{x}$$
+\subsection{Producto cerrado}
+$$A \odot B \Leftrightarrow \mu_{A \odot B } = max(0,\mu_A(x)+\mu_B(x)-1)=0 \lor (\mu_A (x)+\mu_B(x)-1)$$
+\subsection{Suma cerrada}
+$$A\oplus B \Leftrightarrow \mu_{A \oplus B}(x)=min(1,\mu_A(x)+\mu_B(x))= 1 \land (\mu_A(x)+\mu_B(x))$$
+\subsection{Diferencia cerrada}
+$$A \circleddash B \Leftrightarrow \mu_{A \circleddash B }(x)=max (0,\mu_A (x)-\mu_B(x))=0\lor (\mu_A (x)-\mu_B(x)) $$ 
+\section{$\alpha$ nivel del conjunto}
+El nivel de $\alpha$ de un ocnjunto difuso de $A$ se define como un conjunto ordinario de $A_\alpha$ para cual de los grados de sus funciones meimebros exceden el nivel de $\alpha$
+$$A_\alpha=\{x| \mu_A (x) \leq \alpha \}, \text{  } \alpha \in [0,1]$$
+\section{Decisión con logica difusa}
+\citep{3295591b-c3f1-3d45-b93b-b5949fd53fec} introdujeron tres conceptos para usar la lógia difusa como una herramienta d edecisiones:
+
+\begin{itemize}
+    \item Objetivo difuso
+    \item restricción
+    \item decisión
+\end{itemize}
+Un objetivo difuso llamado $G$ es un conjunto difuso en $X $ caracterizado por su función miembro
+$$\mu_G : X \rightarrow [0,1]$$
+Por su parte, una restricción difusa también parte de su función de membresía
+$$\mu_C : X \rightarrow [0,1]$$
+Tomando en cuenta que ambos conjuntos deben de cumplirse se define la decisión difusa $D $ como
+$$D= G \cap C$$
+y su función de membresía es:
+$$\mu_D(x)=min(\mu_G(x),\mu_C(x))$$ 
+De esa forma, se puede maximizar la función de membresía de la decisión, así como del minimo de las de de objetivo y restricción siendo $x \in X $
+Todos los calculos a pesar sido resultador de los papers de  \citep{3295591b-c3f1-3d45-b93b-b5949fd53fec} y \citep{ZADEH1965338}, fueron recompilados por \citep{sakawa1993fuzzy}
+\section{Aplicaciones}
+Se puede aplicar al generar sistemas de reglas y en decidir cuales son las mejores reglas para un problema. Inclusive, con la ayuda de algoritmos geneticos se puede encontrar la mejor regla para una problematica. 
+\bibliographystyle{apalike}
+\bibliography{reference}
+\end{document}
