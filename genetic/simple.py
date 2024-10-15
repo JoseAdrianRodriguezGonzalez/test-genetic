@@ -46,6 +46,11 @@ def genetic(pop_size,generations,xmin,xmax,mutation_rate):
         population=parents.tolist()+offspring
     best=max(population,key=fobject)
     return best,fobject(best)
+value=[]
+sol=[]
+for i in range(100):
+    best_solution,best_value=genetic(1000,100,-100,100,0.1)
+    sol.append(best_solution)
+    value.append(best_value)
 
-best_solution,best_value=genetic(100,50,-10,10,0.05)
-print(f"Mejor solución: x = {best_solution}, f(x) = {best_value}")
+print(f"Mejor solución: x = {sol[value.index(max(value))]}, f(x) = {max(value)}")

@@ -1,0 +1,20 @@
+\begin{thebibliography}{}
+
+\bibitem[Deb and Kalyanmoy, 2001]{10.5555/559152}
+Deb, K. and Kalyanmoy, D. (2001).
+\newblock {\em Multi-Objective Optimization Using Evolutionary Algorithms}.
+\newblock John Wiley \& Sons, Inc., USA.
+
+\bibitem[Holland, 1992]{10.7551/mitpress/1090.001.0001}
+Holland, J.~H. (1992).
+\newblock {\em {Adaptation in Natural and Artificial Systems: An Introductory
+  Analysis with Applications to Biology, Control, and Artificial
+  Intelligence}}.
+\newblock The MIT Press.
+
+\bibitem[Kubat, 2021]{kubat2021introduction}
+Kubat, M. (2021).
+\newblock {\em An Introduction to Machine Learning}.
+\newblock Springer International Publishing.
+
+\end{thebibliography}
