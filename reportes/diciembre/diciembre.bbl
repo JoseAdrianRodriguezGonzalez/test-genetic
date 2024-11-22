@@ -1,0 +1,16 @@
+\begin{thebibliography}{}
+
+\bibitem[Ishibuchi et~al., 2017]{inbook}
+Ishibuchi, H., Murata, T., and Tanaka, H. (2017).
+\newblock Construction of fuzzy classification systems with linguistic if-then
+  rules using genetic algorithms.
+\newblock pages 227--252.
+
+\bibitem[Ishibuchi et~al., 1997]{article1}
+Ishibuchi, H., Nakashima, T., and Murata, T. (1997).
+\newblock Comparison of the michigan and pittsburgh approaches to the design of
+  fuzzy classification systems.
+\newblock {\em Electronics and Communications in Japan Part Iii-fundamental
+  Electronic Science - ELECTRON COMMUN JPN III}, 80:10--19.
+
+\end{thebibliography}

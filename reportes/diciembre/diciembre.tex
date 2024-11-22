@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{natbib}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\title{Clasificación inteligente sinergia entre lógica difusa y algoritmos genéticos }
+\author{José Adrián Rodríguez González}
+\date{Noviembre 2024}
+\begin{document}
+\maketitle
+\section{Introducción}
+Como se menciona en el mes anterior, se implementan las mejoras en el otro problema del cáncer de mama.
+\section{Problemática de la ponderación de las clases}
+Siempre se ponderaraban las predicciones a una clase específica.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{@{}cccc@{}}
+    \toprule
+    \textbf{Regla}       & \textbf{Fitness} & \textbf{CF}    & \textbf{Clase} \\ \midrule
+{[0, 0, 0, 0]}    & 20      & 0.2571  & 1     \\
+{[3, 1, 0, 0]}    & 2       & 0.4311  & 1     \\
+{[0, 1, 4, 1]}    & 0       & 0.4197  & 2     \\
+{[4, 5, 1, 1]}    & 0       & 1.0000  & 2     \\
+{[1, 1, 0, 2]}    & 0       & 0.9803  & 1     \\
+\bottomrule
+\end{tabular}
+    \caption{Reglas únicas de la Generación 10 con sus métricas correspondientes.}
+\label{tab:reglas-unicas}
+\end{table}
+    La (Tabla \ref{tab:reglas-unicas}), muestra las mejores reglas que salieron del algoritmo genético, como se observa, ya no se pondera a una sola clase, ya que el fitness por lo menos ha estado cambiando y no se estancan en dos únicos valores. Sin embargo, el fitness sigue siendo pequeño.
+Estos dos modelos, (Para iris y el del cáncer), pueden ser probados, los conjuntos de reglas, en modelos sintéticos para verificar el accuracy.
+El accuracy obtenido fue de 62.7\% un poco cercano a lo que obtuvo \Citep{article1} con el mismo conjunto de datos, sin embargo, este accuracy es más cercano a lo que obtenía con Pittsburgh que con Michigan.Por lo que sería necesario modificar ese primer modelo, además de posiblemente, aplicar una técnica de validación cruzada para ese modelo 
+\section{Conclusión}
+Como trabajo a futuro, se puede implementar un algoritmo genético híbrido, también se podrían utilizar otros operadores de selección y mutación. Inclusive, para el problema del conjunto de datos de Iris, se puede utilizar el método de Pittsburgh. Otra mejora significativa para el modelo sería la selección del sistema experto a través de lo propuesto por \citep{inbook}. Sin duda, aun queda trabajo de investigación por realizar a este tipo de modelos, debido a lo poco considerados y estudiados que son, además de que el modelo puede irse mejorando con distintas técnicas de algoritmos genéticos.
+\bibliographystyle{apalike}
+\bibliography{reference}
+\end{document}

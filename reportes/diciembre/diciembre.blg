@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: diciembre.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: apalike.bst
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Database file #1: reference.bib
+Warning--empty journal in inbook
+You've used 2 entries,
+            1935 wiz_defined-function locations,
+            482 strings with 4127 characters,
+and the built_in function-call counts, 922 in all, are:
+= -- 89
+> -- 36
+< -- 1
++ -- 12
+- -- 12
+* -- 72
+:= -- 156
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 16
+chr.to.int$ -- 2
+cite$ -- 3
+duplicate$ -- 37
+empty$ -- 63
+format.name$ -- 14
+if$ -- 188
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 2
+newline$ -- 13
+num.names$ -- 6
+pop$ -- 16
+preamble$ -- 1
+purify$ -- 16
+quote$ -- 0
+skip$ -- 33
+stack$ -- 0
+substring$ -- 67
+swap$ -- 10
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 1
+while$ -- 7
+width$ -- 0
+write$ -- 27
+(There was 1 warning)
