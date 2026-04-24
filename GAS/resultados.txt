@@ -1,0 +1,202 @@
+Run {1...10}
+-----------------------------
+Run 1
+-----------------------------
+Run 2
+-----------------------------
+Run 3
+-----------------------------
+Run 4
+-----------------------------
+Run 5
+-----------------------------
+Run 6
+-----------------------------
+Run 7
+-----------------------------
+Run 8
+-----------------------------
+Run 9
+-----------------------------
+Run 10
+-----------------------------
+Run 1
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101110010:0111110010101110 Valor_Entero:,52594,31918	 Valor_Real:,3.79981,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 2
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101110010:0111110010101110 Valor_Entero:,52594,31918	 Valor_Real:,3.79981,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 3
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101110010:0111110010101110 Valor_Entero:,52594,31918	 Valor_Real:,3.79981,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 4
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101110010:0111110010101110 Valor_Entero:,52594,31918	 Valor_Real:,3.79981,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 5
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101110010:0111110010101110 Valor_Entero:,52594,31918	 Valor_Real:,3.79981,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 6
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101110010:0111110010101110 Valor_Entero:,52594,31918	 Valor_Real:,3.79981,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 7
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101110010:0111110010101111 Valor_Entero:,52594,31919	 Valor_Real:,3.79981,-0.162618	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 8
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101110010:0111110010101111 Valor_Entero:,52594,31919	 Valor_Real:,3.79981,-0.162618	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 9
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101110010:0111110010101111 Valor_Entero:,52594,31919	 Valor_Real:,3.79981,-0.162618	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 10
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101110010:0111110010101111 Valor_Entero:,52594,31919	 Valor_Real:,3.79981,-0.162618	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 1
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101101111:0111110010101101 Valor_Entero:,52591,31917	 Valor_Real:,3.79924,-0.163001	 Valor objetivo:,11.471	 Califcacion:,99.9998
+-----------------------------
+Run 2
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101101111:0111110010101101 Valor_Entero:,52591,31917	 Valor_Real:,3.79924,-0.163001	 Valor objetivo:,11.471	 Califcacion:,99.9998
+-----------------------------
+Run 3
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101101111:0111110010101110 Valor_Entero:,52591,31918	 Valor_Real:,3.79924,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 4
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101101111:0111110010101110 Valor_Entero:,52591,31918	 Valor_Real:,3.79924,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 5
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101101111:0111110010101110 Valor_Entero:,52591,31918	 Valor_Real:,3.79924,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 6
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101101111:0111110010101110 Valor_Entero:,52591,31918	 Valor_Real:,3.79924,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 7
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101101111:0111110010101110 Valor_Entero:,52591,31918	 Valor_Real:,3.79924,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 8
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101101111:0111110010101110 Valor_Entero:,52591,31918	 Valor_Real:,3.79924,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 9
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101101111:0111110010101110 Valor_Entero:,52591,31918	 Valor_Real:,3.79924,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
+Run 10
+16
+16
+ se crea el liminf
+ se crea el limsup
+ se inicio
+Best
+[0]:1100110101101111:0111110010101110 Valor_Entero:,52591,31918	 Valor_Real:,3.79924,-0.16281	 Valor objetivo:,11.471	 Califcacion:,99.9999
+-----------------------------
