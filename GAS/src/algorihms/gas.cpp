@@ -1,4 +1,4 @@
-#include "gas.hpp"
+#include "../../lib/algorithms/gas.hpp"
 #include <cmath>
 #include <cstddef>
 #include <cstdlib>
@@ -337,8 +337,3 @@ void GA::print_individual(unsigned int k) {
   std::cout << std::endl;
 }
 unsigned int GA::getMax() { return this->idMax; }
-void GA ::Elitismo(void) {
-  for (int i = 0; i < ChromeSize; i++) {
-    NewPOB[0].Chrom[i] = POB[this->idMax].Chrom[i];
-  }
-}
