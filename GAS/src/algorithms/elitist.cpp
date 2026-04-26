@@ -9,7 +9,14 @@ GA::GA(unsigned int TAM_POBLACION, unsigned int NUM_GENES,
        ObjectiveFunction f) {
   this->initialization_ga(TAM_POBLACION, NUM_GENES, NumBITsxGEN, Linf, Lsup, f);
 }
-GA::GA() {}
+GA::GA() {
+  POB = nullptr;
+  NewPOB = nullptr;
+  seleccionados = nullptr;
+  NumBITsxGEN = nullptr;
+  Limit_Inf = nullptr;
+  Limit_Sup = nullptr;
+}
 void GA::initialization_ga(unsigned int TAM_POBLACION, unsigned int NUM_GENES,
                            unsigned int *NumBITsxGEN, float *Linf, float *Lsup,
                            ObjectiveFunction f) {
@@ -46,34 +53,22 @@ void GA::initialization_ga(unsigned int TAM_POBLACION, unsigned int NUM_GENES,
 void GA::initialization_ga(unsigned int TAM_POBLACION, unsigned int NUM_GENES,
                            unsigned int *NumBITsxGEN, float *Linf,
                            float *Lsup) {
-
+  std::cout << "NUM_GENES = " << NUM_GENES << std::endl;
+  std::cout << "TAM_POBLACION = " << TAM_POBLACION << std::endl;
+  std::cout << "ChromeSize = " << ChromeSize << std::endl;
+  for (size_t i = 0; i < NUM_GENES; i++) {
+    std::cout << "i=" << i << " NumBITsxGEN=" << NumBITsxGEN[i] << std::endl;
+  }
   this->TAM_POBLACION = TAM_POBLACION;
-  this->NUM_GENES = NUM_GENES;
   this->POB = new INDIVIDUO[this->TAM_POBLACION];
   this->NewPOB = new INDIVIDUO[this->TAM_POBLACION];
-  this->NumBITsxGEN = new unsigned int[this->NUM_GENES];
-  for (size_t i = 0; i < this->NUM_GENES; i++) {
-    this->NumBITsxGEN[i] = NumBITsxGEN[i];
-    std::cout << this->NumBITsxGEN[i] << std::endl;
-  }
-  this->Limit_Inf = new float[NUM_GENES];
-  for (size_t i = 0; i < NUM_GENES; i++) {
-    this->Limit_Inf[i] = Linf[i];
-  }
-  std::cout << " se crea el liminf\n";
-  this->Limit_Sup = new float[NUM_GENES];
-  for (size_t i = 0; i < NUM_GENES; i++) {
-    this->Limit_Sup[i] = Lsup[i];
-  }
-  std::cout << " se crea el limsup\n";
-  this->ChromeSize = 0;
-  Chromsize_();
   idMax = 0.0;
   idMin = 0.0;
   initialize_population();
   std::cout << " se inicio\n";
   decode_integer();
   decode_real();
+  std::cout << "a";
 }
 
 void GA::Chromsize_() {
@@ -175,11 +170,14 @@ void GA::muta(float prob) {
   }
 }
 void GA::decode_integer() {
+
   for (int k = 0; k < this->TAM_POBLACION; k++) {
     unsigned int Acumulado = 0, g = 0, aux = 0;
     Acumulado += NumBITsxGEN[g];
     for (int i = 0, j = 0; i < ChromeSize; i++, j++) {
-      aux |= POB[k].Chrom[i] << j;
+
+      aux += POB[k].Chrom[i] * pow(2, j);
+
       if (i == (Acumulado - 1)) {
         POB[k].Vent[g] = aux;
         aux = 0;
@@ -193,10 +191,13 @@ void GA::decode_integer() {
 void GA::decode_real() {
   for (int k = 0; k < TAM_POBLACION; k++) {
     float rango = 0;
-    unsigned int Den;
+    unsigned int Den = 0;
     for (int j = 0; j < NUM_GENES; j++) {
+
       rango = Limit_Sup[j] - Limit_Inf[j];
-      Den = (1ULL << NumBITsxGEN[j]) - 1;
+
+      Den = pow(2, NumBITsxGEN[j]) - 1;
+
       POB[k].Vre[j] = (((float)POB[k].Vent[j] / Den) * rango) + Limit_Inf[j];
     }
   }
@@ -388,10 +389,10 @@ void GA ::Elitismo(void) {
 void GA::run(const unsigned int &gen, OPT_TYPE opt, const float &prob_mut,
              const float &prob_cross) {
   unsigned int t = 1;
-  this->decode_integer();
-  this->decode_real();
   this->EvaluatePoblation();
+  std::cout << "d";
   this->obj_to_fit(opt);
+  std::cout << "e";
   while (t <= gen) {
     this->Roulette();
     this->cruza1P(prob_cross);
@@ -408,34 +409,48 @@ void GA::run(const unsigned int &gen, OPT_TYPE opt, const float &prob_mut,
   this->print_individual(this->getMax());
 }
 
-GA::~GA() {
-  for (int k = 0; k < this->TAM_POBLACION; k++) {
-    delete[] POB[k].Chrom;
-    delete[] POB[k].Vent;
-    delete[] POB[k].Vre;
-    delete[] NewPOB[k].Chrom;
-    delete[] NewPOB[k].Vent;
-    delete[] NewPOB[k].Vre;
-  }
+GA::~GA() { free_memory(); }
+void GA::reset() {
   delete[] POB;
   delete[] NewPOB;
-  delete[] NumBITsxGEN;
-  delete[] Limit_Inf;
-  delete[] Limit_Sup;
+
   delete[] seleccionados;
+
+  POB = nullptr;
+  NewPOB = nullptr;
 }
 void GA::free_memory() {
-  for (int k = 0; k < TAM_POBLACION; k++) {
-    delete[] POB[k].Chrom;
-    delete[] POB[k].Vent;
-    delete[] POB[k].Vre;
-    delete[] NewPOB[k].Chrom;
-    delete[] NewPOB[k].Vent;
-    delete[] NewPOB[k].Vre;
+  if (POB) {
+    for (int k = 0; k < TAM_POBLACION; k++) {
+      delete[] POB[k].Chrom;
+      delete[] POB[k].Vent;
+      delete[] POB[k].Vre;
+    }
+    delete[] POB;
+    POB = nullptr;
   }
-  delete[] POB;
-  delete[] NewPOB;
+
+  if (NewPOB) {
+    for (int k = 0; k < TAM_POBLACION; k++) {
+      delete[] NewPOB[k].Chrom;
+      delete[] NewPOB[k].Vent;
+      delete[] NewPOB[k].Vre;
+    }
+    delete[] NewPOB;
+    NewPOB = nullptr;
+  }
+
   delete[] seleccionados;
+  seleccionados = nullptr;
+
+  delete[] NumBITsxGEN;
+  ;
+
+  delete[] Limit_Inf;
+  Limit_Inf = nullptr;
+
+  delete[] Limit_Sup;
+  Limit_Sup = nullptr;
 }
 void GA::resize_population(unsigned int new_size) {
   free_memory();

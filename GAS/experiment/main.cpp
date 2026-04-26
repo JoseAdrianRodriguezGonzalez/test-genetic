@@ -39,7 +39,7 @@ template <typename T> void fill_array(T *arr, unsigned int len, T value) {
 }
 void init_params(gen_init *p, const unsigned int &bits, const float &limit_i,
                  const float &limit_sup, const unsigned int len);
-void init_algorithm(const GA *solvers, gen_init *g, unsigned int problems,
+void init_algorithm(GA *solvers, gen_init *g, unsigned int problems,
                     const float *ls, const float *li,
                     const ObjectiveFunction *functions,
                     const unsigned int &bits, const unsigned int &dim);
@@ -122,9 +122,10 @@ Result RandomSearch(GA &g, const HyperSpace &s, const unsigned int &guess,
     float avg_error = 0;
     std::cout << "iteration :" << i << std::endl;
     for (int r = 0; r < runs; r++) {
+      g.reset();
       std::cout << "Run :" << r << "\t";
-      g.free_memory();
       g.initialization_ga(h[i].tamp_pob, gi->len, gi->numbits, gi->li, gi->ls);
+      std::cout << "hola";
       g.run(h[i].num_generaciones, MIN, h[i].prob_mut, h[i].prob_cruza);
       float f_optim = g.getfitness(g.getMax());
       avg_error += std::fabs(f_best - f_optim);
@@ -145,6 +146,7 @@ void hyperparameter_finetuning(Result *r, GA *g, const unsigned int &problems,
                                const HyperSpace &s, const unsigned int &guess,
                                const int &runs, gen_init *gi, float *optimos) {
   for (int i = 0; i < problems; i++) {
+
     r[i] = RandomSearch(g[i], s, guess, runs, &gi[i], optimos[i]);
   }
 }

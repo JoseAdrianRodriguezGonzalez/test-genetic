@@ -1,0 +1,2 @@
+/usr/bin/ar qc libga_lib.a CMakeFiles/ga_lib.dir/src/algorithms/elitist.cpp.o CMakeFiles/ga_lib.dir/src/algorithms/gas.cpp.o CMakeFiles/ga_lib.dir/src/benchmark/benchmark.cpp.o
+/usr/bin/ranlib libga_lib.a

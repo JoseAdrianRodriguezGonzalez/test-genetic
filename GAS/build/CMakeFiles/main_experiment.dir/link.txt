@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/main_experiment.dir/link.d CMakeFiles/main_experiment.dir/experiment/main1.cpp.o -o main_experiment  libga_lib.a

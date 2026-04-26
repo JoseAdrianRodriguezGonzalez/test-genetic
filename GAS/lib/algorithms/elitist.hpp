@@ -68,4 +68,5 @@ public:
   float getfitness(unsigned int index);
   float *getRealValues(unsigned int index);
   void printRealValues(unsigned int index);
+  void reset();
 };
