@@ -43,6 +43,39 @@ void GA::initialization_ga(unsigned int TAM_POBLACION, unsigned int NUM_GENES,
   decode_integer();
   decode_real();
 }
+void GA::initialization_ga(unsigned int TAM_POBLACION, unsigned int NUM_GENES,
+                           unsigned int *NumBITsxGEN, float *Linf,
+                           float *Lsup) {
+
+  this->TAM_POBLACION = TAM_POBLACION;
+  this->NUM_GENES = NUM_GENES;
+  this->POB = new INDIVIDUO[this->TAM_POBLACION];
+  this->NewPOB = new INDIVIDUO[this->TAM_POBLACION];
+  this->NumBITsxGEN = new unsigned int[this->NUM_GENES];
+  for (size_t i = 0; i < this->NUM_GENES; i++) {
+    this->NumBITsxGEN[i] = NumBITsxGEN[i];
+    std::cout << this->NumBITsxGEN[i] << std::endl;
+  }
+  this->Limit_Inf = new float[NUM_GENES];
+  for (size_t i = 0; i < NUM_GENES; i++) {
+    this->Limit_Inf[i] = Linf[i];
+  }
+  std::cout << " se crea el liminf\n";
+  this->Limit_Sup = new float[NUM_GENES];
+  for (size_t i = 0; i < NUM_GENES; i++) {
+    this->Limit_Sup[i] = Lsup[i];
+  }
+  std::cout << " se crea el limsup\n";
+  this->ChromeSize = 0;
+  Chromsize_();
+  idMax = 0.0;
+  idMin = 0.0;
+  initialize_population();
+  std::cout << " se inicio\n";
+  decode_integer();
+  decode_real();
+}
+
 void GA::Chromsize_() {
   for (int k = 0; k < NUM_GENES; k++)
     this->ChromeSize += NumBITsxGEN[k];
@@ -345,6 +378,7 @@ void GA::print_individual(unsigned int k) {
   std::cout << "," << (float)POB[k].Vfit;
   std::cout << std::endl;
 }
+
 unsigned int GA::getMax() { return this->idMax; }
 void GA ::Elitismo(void) {
   for (int i = 0; i < ChromeSize; i++) {
@@ -409,4 +443,13 @@ void GA::resize_population(unsigned int new_size) {
   this->POB = new INDIVIDUO[this->TAM_POBLACION];
   this->NewPOB = new INDIVIDUO[this->TAM_POBLACION];
   initialize_population();
+}
+float GA::getObjetive(unsigned int index) { return this->POB[index].VObj; }
+float GA::getfitness(unsigned int index) { return this->POB[index].Vfit; }
+
+float *GA::getRealValues(unsigned int index) { return this->POB[index].Vre; }
+void GA::printRealValues(unsigned int index) {
+
+  for (int j = NUM_GENES - 1; j >= 0; j--)
+    std::cout << (float)POB[index].Vre[j] << ",";
 }

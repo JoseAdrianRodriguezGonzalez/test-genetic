@@ -45,6 +45,8 @@ public:
                          unsigned int *NumBITsxGEN, float *Linf, float *Lsup,
                          ObjectiveFunction f);
 
+  void initialization_ga(unsigned int TAM_POBLACION, unsigned int NUM_GENES,
+                         unsigned int *NumBITsxGEN, float *Linf, float *Lsup);
   ~GA();
   void print_population();
   //  float objectiveFunction(unsigned int id);
@@ -62,4 +64,8 @@ public:
            const float &prob_cross);
   void free_memory();
   void resize_population(unsigned int new_size);
+  float getObjetive(unsigned int index);
+  float getfitness(unsigned int index);
+  float *getRealValues(unsigned int index);
+  void printRealValues(unsigned int index);
 };
