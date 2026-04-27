@@ -29,7 +29,6 @@ void GA::initialization_ga(unsigned int TAM_POBLACION, unsigned int NUM_GENES,
   this->NumBITsxGEN = new unsigned int[this->NUM_GENES];
   for (size_t i = 0; i < this->NUM_GENES; i++) {
     this->NumBITsxGEN[i] = NumBITsxGEN[i];
-    std::cout << this->NumBITsxGEN[i] << std::endl;
   }
   this->Limit_Inf = new float[NUM_GENES];
   for (size_t i = 0; i < NUM_GENES; i++) {

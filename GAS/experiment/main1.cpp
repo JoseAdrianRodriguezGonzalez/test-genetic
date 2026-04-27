@@ -1,5 +1,6 @@
 #include "../lib/algorithms/elitist.hpp"
 #include "../lib/benchmark/benchmark.hpp"
+#include <cmath>
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
@@ -7,8 +8,8 @@
 #include <string>
 void log_result(const std::string &file, float fitness);
 bool read_results(const std::string &file, int limit);
-int main(int argc, char **argv) {
-  int func_id = atoi(argv[1]);
+void pipeline_process(int val) {
+  int func_id = val;
   time_t tx;
   srand((unsigned)std::time(&tx));
 
@@ -29,9 +30,9 @@ int main(int argc, char **argv) {
     for (int i = 0; i < 30; i++)
       bits[i] = 16;
     for (int i = 0; i < dim; i++)
-      limit_inf[i] = LI[1];
+      limit_inf[i] = LI[0];
     for (int i = 0; i < dim; i++)
-      limit_sup[i] = LS[1];
+      limit_sup[i] = LS[0];
     pob = 100;
     genes = 30;
     generacion = 5000;
@@ -75,8 +76,52 @@ int main(int argc, char **argv) {
   }
   if (read_results(file, limit)) {
     std::cout << "Ya no es necesario correr mas";
-    return 0;
+    return;
   }
+}
+
+void read_results(const std::string &file, int quant, float *val);
+float media(float *values, int len);
+float std_(float *values, int len);
+int main(int argc, char **argv) {
+
+  // pipeline_process(atoi(argv[1]));
+  float **val = new float *[3];
+
+  const std::string files[3] = {"../results/f1.txt", "../results/f2.txt",
+                                "../results/f3.txt"};
+  const std::string outfiles[3] = {"../results/f1_est.txt",
+                                   "../results/f2_est.txt",
+                                   "../results/f3_est.txt"};
+
+  for (int i = 0; i < 3; i++) {
+    val[i] = new float[100];
+    read_results(files[i], 100, val[i]);
+    float mu = media(val[i], 100);
+    float sigma = std_(val[i], 100);
+    log_result(outfiles[i], mu);
+    log_result(outfiles[i], sigma);
+  }
+  return 0;
+  // calcular estradisticos
+}
+float media(float *values, int len) {
+  float sum = 0;
+
+  for (int i = 0; i < len; i++) {
+    sum += values[i];
+  }
+  return sum / len;
+}
+float std_(float *values, int len) {
+  float sum = 0;
+  float mu = media(values, len);
+  for (int i = 0; i < len; i++) {
+    float term = values[i] - mu;
+    sum += (term * term);
+  }
+
+  return std::sqrt(sum / (float)len);
 }
 bool read_results(const std::string &file, int limit) {
   std::ifstream in(file);
@@ -108,6 +153,24 @@ void log_result(const std::string &file, float fitness) {
   }
   out << fitness << "\n";
   std::cout << "escrito con exito el archiv en " << file;
+}
+void read_results(const std::string &file, int quant, float *val) {
+
+  std::ifstream in(file);
+  if (!in.is_open()) {
+    std::cout << "No se pudo abrir";
+    return;
+  }
+  std::string line;
+  int count = 0;
+  while (std::getline(in, line)) {
+    if (count == quant) {
+      break;
+    }
+    val[count] = std::stof(line);
+    count++;
+  }
+  return;
 }
 /*FUncion 1 bits 16
  * GA g(100, 30, bits, limit_inf, limit_sup, functions[0]);

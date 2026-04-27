@@ -8,9 +8,10 @@ cmake ..
 echo "🔨 Compilando..."
 make -j$(nproc)
 echo "🚀 Ejecutando programa..."
-for j in $(seq 0 100); do
-  for i in 0 1 2; do
-    ./main_experiment $i &
-  done
-  wait
-done
+./main_experiment
+#for j in $(seq 0 100); do
+#  for i in 0 1 2; do
+#    ./main_experiment $i &
+#  done
+#  wait
+#done
