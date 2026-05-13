@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/build",
+  "command": "/usr/bin/c++  -I/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/lib -std=gnu++20 -o CMakeFiles/core.dir/src/ga/sga.cpp.o -c /home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/src/ga/sga.cpp",
+  "file": "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/src/ga/sga.cpp",
+  "output": "CMakeFiles/core.dir/src/ga/sga.cpp.o"
+},
+{
+  "directory": "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/build",
+  "command": "/usr/bin/c++  -I/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/lib -std=gnu++20 -o CMakeFiles/core.dir/src/experiments/program.cpp.o -c /home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/src/experiments/program.cpp",
+  "file": "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/src/experiments/program.cpp",
+  "output": "CMakeFiles/core.dir/src/experiments/program.cpp.o"
+},
+{
+  "directory": "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/build",
+  "command": "/usr/bin/c++  -I/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/lib -std=gnu++20 -o CMakeFiles/core.dir/src/io/reader.cpp.o -c /home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/src/io/reader.cpp",
+  "file": "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/src/io/reader.cpp",
+  "output": "CMakeFiles/core.dir/src/io/reader.cpp.o"
+},
+{
+  "directory": "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/build",
+  "command": "/usr/bin/c++  -I/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/lib -std=gnu++20 -o CMakeFiles/programa.dir/app/main.cpp.o -c /home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/app/main.cpp",
+  "file": "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/app/main.cpp",
+  "output": "CMakeFiles/programa.dir/app/main.cpp.o"
+}
+]

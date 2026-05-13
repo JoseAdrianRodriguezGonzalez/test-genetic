@@ -1,0 +1,4 @@
+/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/build/CMakeFiles/core.dir
+/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/build/CMakeFiles/programa.dir
+/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/build/CMakeFiles/edit_cache.dir
+/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica1/build/CMakeFiles/rebuild_cache.dir

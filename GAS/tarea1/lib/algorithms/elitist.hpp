@@ -60,6 +60,7 @@ public:
   void print_individual(unsigned int k);
   unsigned int getMax();
   void Elitismo();
+  void cruza2P(float C);
   void run(const unsigned int &gen, OPT_TYPE opt, const float &prob_mut,
            const float &prob_cross);
   void free_memory();

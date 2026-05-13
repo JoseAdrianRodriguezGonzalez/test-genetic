@@ -157,6 +157,52 @@ void GA::cruza1P(float C) {
     }
   }
 }
+void GA::cruza2P(float C) {
+  unsigned int k, i, Pc;
+  unsigned int Limit = ChromeSize - 1;
+  unsigned int Padre1, Padre2;
+  float r;
+
+  //  for (k = 0; k < TAM_POBLACION; k++)
+  //    std::cout << seleccionados[k] << "\n";
+  for (k = 0; k < TAM_POBLACION; k += 2) {
+    r = (float)rand() / RAND_MAX;
+    if (r < C) {
+
+      Padre1 = seleccionados[k];
+      Padre2 = seleccionados[k + 1];
+      NewPOB[k].Padre1 = Padre1;
+      NewPOB[k].Padre2 = Padre2;
+      NewPOB[k + 1].Padre1 = Padre2;
+      NewPOB[k + 1].Padre2 = Padre1;
+      Pc = rand() % (Limit);
+      for (i = 0; i <= Pc; i++) {
+        NewPOB[k].Chrom[i] = POB[Padre1].Chrom[i];
+        NewPOB[k + 1].Chrom[i] = POB[Padre2].Chrom[i];
+      }
+      for (i = Pc + 1; i < ChromeSize; i++) {
+        NewPOB[k].Chrom[i] = POB[Padre2].Chrom[i];
+        NewPOB[k + 1].Chrom[i] = POB[Padre1].Chrom[i];
+      }
+    } else {
+      Padre1 = seleccionados[k];
+      Padre2 = seleccionados[k + 1];
+      NewPOB[k].Padre1 = Padre1;
+      NewPOB[k].Padre2 = Padre1;
+      NewPOB[k + 1].Padre1 = Padre2;
+      NewPOB[k + 1].Padre2 = Padre2;
+      // NewPOB[k].Padre1 = Padre1;
+      // NewPOB[k].Padre2 = Padre2;
+      // NewPOB[k + 1].Padre1 = Padre1;
+      // NewPOB[k + 1].Padre2 = Padre2;
+      for (i = 0; i < ChromeSize; i++) {
+        NewPOB[k].Chrom[i] = POB[Padre1].Chrom[i];
+        NewPOB[k + 1].Chrom[i] = POB[Padre2].Chrom[i];
+      }
+    }
+  }
+}
+
 void GA::muta(float prob) {
   float r;
   for (int k = 0; k < TAM_POBLACION; k++) {
