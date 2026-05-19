@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica_3/app/main.cpp" "CMakeFiles/programa.dir/app/main.cpp.o" "gcc" "CMakeFiles/programa.dir/app/main.cpp.o.d"
+  "/home/adrian/Documents/universidad/test-genetic/GAS/practica_3/app/main.cpp" "CMakeFiles/programa.dir/app/main.cpp.o" "gcc" "CMakeFiles/programa.dir/app/main.cpp.o.d"
   "" "programa" "gcc" "CMakeFiles/programa.dir/link.d"
   )
 

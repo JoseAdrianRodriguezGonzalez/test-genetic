@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica_3/src/experiments/program.cpp" "CMakeFiles/core.dir/src/experiments/program.cpp.o" "gcc" "CMakeFiles/core.dir/src/experiments/program.cpp.o.d"
-  "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica_3/src/ga/sga.cpp" "CMakeFiles/core.dir/src/ga/sga.cpp.o" "gcc" "CMakeFiles/core.dir/src/ga/sga.cpp.o.d"
-  "/home/adrian/Documents/Uni/Sexto/test-genetic/GAS/practica_3/src/io/reader.cpp" "CMakeFiles/core.dir/src/io/reader.cpp.o" "gcc" "CMakeFiles/core.dir/src/io/reader.cpp.o.d"
+  "/home/adrian/Documents/universidad/test-genetic/GAS/practica_3/src/experiments/program.cpp" "CMakeFiles/core.dir/src/experiments/program.cpp.o" "gcc" "CMakeFiles/core.dir/src/experiments/program.cpp.o.d"
+  "/home/adrian/Documents/universidad/test-genetic/GAS/practica_3/src/ga/sga.cpp" "CMakeFiles/core.dir/src/ga/sga.cpp.o" "gcc" "CMakeFiles/core.dir/src/ga/sga.cpp.o.d"
+  "/home/adrian/Documents/universidad/test-genetic/GAS/practica_3/src/io/reader.cpp" "CMakeFiles/core.dir/src/io/reader.cpp.o" "gcc" "CMakeFiles/core.dir/src/io/reader.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
